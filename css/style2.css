@@ -90,23 +90,37 @@ body{
 	letter-spacing: 2px;
 	font-size:4rem;
 }
-
 .heading::before,
-.heading::after{
-	content:'';
-	position:absolute;
-	right:0;
-	bottom:0;
-	left:0;
-	border-bottom:1px solid #999;
+.heading::after {
+  content: '';
+  display:inline-block;
+  width:12px;
+  height:12px;
+  margin:0 20px;
+  border:1px solid;
+  vertical-align:8px;
+  -webkit-transform:rotate(45deg);
+  -ms-transform:rotate(45deg);
+  transform:rotate(45deg);
 }
-.heading::before{
-	bottom: 5px;
+@media (max-width:768px){
+  .heading::before,
+  .heading::after{
+    width:8px;
+    height:8px;
+    margin: 0 12px;
+		vertical-align:5px;
+  }
 }
+
 .about-text{
 	margin: 30px 0;
 	line-height:2.5;
 }
+
+
+
+/*****************************************************/
 
 .works {
 	background-color: #383634;
@@ -117,21 +131,22 @@ body{
 	display:table;
 	width:100%;
 	margin-top:60px;
-	table-layout: 60px;
 	table-layout:fixed;
 }
 
-.work-box{
-	display:table-cell;
-	position:relative;
+.work-box {
+  position: relative;
+  display: table-cell;
 }
+
+
 .work-box::after{
-	content:'';
-	position:absolute;
-	top:50%;
-	left:0;
-	width:100%;
-	height:50%;
+	content: '';
+	position: absolute;
+	top: 50%;
+	left: 0;
+	width: 100%;
+	height: 50%;
 	background: no-repeat;
 	background-size: 100% 100%;
 	opacity: 0.2;
@@ -151,11 +166,11 @@ body{
 	background-image: url('../images/sky.jpg');
 }
 
-.work-box:inth-child(odd) .work-image{
-	margin:60% 0 0;
+.work-box:nth-child(odd) .work-image{
+	margin: 60% 0 0;
 }
 .work-box:nth-child(odd) .work-description,
-.wrok-box:nth-child(odd)::after{
+.work-box:nth-child(odd)::after{
 		top: 0;
 }
 
@@ -194,6 +209,37 @@ body{
 	margin-top:20px;
 	padding:3px;
 }
+
+
+.work-box {
+	overflow:hidden;
+}
+.work-box img{
+	transition: -webkit-transform 0.5s ease-in-out;
+	transition:transform 0.5s ease-in-out;
+}
+
+.work-box:nth-of-type(odd) img{
+	-webkit-transform-origin: top center;
+	transform-origin: top center;
+}
+.work-box:nth-of-type(even) img {
+	-webkit-transform-origin:bottom center;
+	transform-origin:bottom center;
+}
+.work-box:hover img{
+	-webkit-transform: scale(1.1);
+	transform: scale(1.1);
+}
+
+
+
+
+
+
+
+
+
 
 .button-ghost{
 	border:1px solid #fff;
