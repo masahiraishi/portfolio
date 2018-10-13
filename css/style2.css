@@ -328,6 +328,23 @@ body{
 .contact-form textarea:focus {
 	box-shadow:0 0 8px rgba(255,255,255,0.5) inset;
 }
+.mail{
+	display:block;
+	width:300px;
+	margin:40px auto 0;
+	padding:15px;
+	border: 1px solid rgba(255,255,255,0.4);
+	border-radius:5px;
+	background-color:transparent;
+	color:rgba(255,255,255,0.6);
+	cursor:pointer;
+	text-decoration: none;
+
+}
+.mail:hover{
+	background-color: rgba(255,255,255,0.05);
+}
+
 
 .footer{
 	padding: 12px 0;
